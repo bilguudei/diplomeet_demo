@@ -1,0 +1,23 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="#1565C0"/>
+  
+  <!-- Globe Grid Lines -->
+  <path d="M136 256H376" stroke="white" stroke-width="8" stroke-linecap="round" stroke-opacity="0.3"/>
+  <path d="M256 136V376" stroke="white" stroke-width="8" stroke-linecap="round" stroke-opacity="0.3"/>
+  <circle cx="256" cy="256" r="120" stroke="white" stroke-width="8" stroke-opacity="0.3"/>
+  
+  <!-- Handshake/Meeting Symbol -->
+  <path d="M196 236C249.019 236 292 258.981 292 312" 
+    stroke="white" stroke-width="24" stroke-linecap="round"/>
+  <path d="M316 236C262.981 236 220 258.981 220 312" 
+    stroke="white" stroke-width="24" stroke-linecap="round"/>
+    
+  <!-- Connection Points -->
+  <circle cx="196" cy="236" r="12" fill="white"/>
+  <circle cx="316" cy="236" r="12" fill="white"/>
+  <circle cx="256" cy="312" r="12" fill="white"/>
+  
+  <!-- Outer Ring -->
+  <circle cx="256" cy="256" r="220" stroke="white" stroke-width="4" stroke-opacity="0.2"/>
+</svg> 
