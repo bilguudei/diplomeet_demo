@@ -16,82 +16,57 @@
     the `--base-href` argument provided to `flutter build`.
   -->
   <!-- <base href="$FLUTTER_BASE_HREF"> -->
+<!-- <base href="/"> -->
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Diplomeet - Diplomatic Meeting Management">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Diplomeet">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <title>Diplomeet</title>
-  <link rel="manifest" href="manifest.json">
-
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = null;
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
-  <style>
-    body {
-      background-color: #303030;
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .frame {
-      position: relative;
-      width: 390px;
-      height: 844px;
-      background: white;
-      border-radius: 40px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-    .notch {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 150px;
-      height: 30px;
-      background: #303030;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-      z-index: 2;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta content="IE=Edge" http-equiv="X-UA-Compatible">
+@@ -39,24 +39,50 @@
+</script>
+<!-- This script adds the flutter initialization JS code -->
+<script src="flutter.js" defer></script>
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  #flutter-app {
+    width: 390px;
+    /* iPhone 12/13 width */
+    height: 844px;
+    /* iPhone 12/13 height */
+    border: 12px solid #1a1a1a;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    background: white;
+  }
+</style>
 </head>
 
 <body>
-  <div class="frame">
-    <div class="notch"></div>
-    <script>
-      window.addEventListener('load', function (ev) {
-        // Download main.dart.js
-        _flutter.loader.loadEntrypoint({
-          serviceWorker: {
-            serviceWorkerVersion: serviceWorkerVersion,
-          },
-          onEntrypointLoaded: function (engineInitializer) {
-            engineInitializer.initializeEngine().then(function (appRunner) {
-              appRunner.runApp();
-            });
-          }
-        });
+<div id="flutter-app">
+  <script>
+    window.addEventListener('load', function (ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine({
+            hostElement: document.querySelector('#flutter-app')
+          }).then(function (appRunner) {
+            appRunner.runApp();
+          });
+        }
       });
-    </script>
-  </div>
+    });
+  </script>
+</div>
 </body>
 
 </html>
