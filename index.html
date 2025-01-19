@@ -2,70 +2,72 @@
 <html>
 
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Diplomeet - Diplomatic Meeting Management">
 
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Diplomeet">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <!-- <base href="$FLUTTER_BASE_HREF"> -->
-<!-- <base href="/"> -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
 
-<meta charset="UTF-8">
-<meta content="IE=Edge" http-equiv="X-UA-Compatible">
-</script>
-<!-- This script adds the flutter initialization JS code -->
-<script src="flutter.js" defer></script>
-<style>
-  body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f0f0;
-  }
-  #flutter-app {
-    width: 390px;
-    /* iPhone 12/13 width */
-    height: 844px;
-    /* iPhone 12/13 height */
-    border: 12px solid #1a1a1a;
-    border-radius: 40px;
-    overflow: hidden;
-    position: relative;
-    background: white;
-  }
-</style>
+  <title>Diplomeet</title>
+  <link rel="manifest" href="manifest.json">
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "4057361855";
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    #flutter-app {
+      width: 390px;
+      /* iPhone 12/13 width */
+      height: 844px;
+      /* iPhone 12/13 height */
+      border: 12px solid #1a1a1a;
+      border-radius: 40px;
+      overflow: hidden;
+      position: relative;
+      background: white;
+    }
+  </style>
 </head>
 
 <body>
-<div id="flutter-app">
-  <script>
-    window.addEventListener('load', function (ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function (engineInitializer) {
-          engineInitializer.initializeEngine({
-            hostElement: document.querySelector('#flutter-app')
-          }).then(function (appRunner) {
-            appRunner.runApp();
-          });
-        }
+  <div id="flutter-app">
+    <script>
+      window.addEventListener('load', function (ev) {
+        // Download main.dart.js
+        _flutter.loader.loadEntrypoint({
+          serviceWorker: {
+            serviceWorkerVersion: serviceWorkerVersion,
+          },
+          onEntrypointLoaded: function (engineInitializer) {
+            engineInitializer.initializeEngine({
+              hostElement: document.querySelector('#flutter-app')
+            }).then(function (appRunner) {
+              appRunner.runApp();
+            });
+          }
+        });
       });
-    });
-  </script>
-</div>
+    </script>
+  </div>
 </body>
 
 </html>
